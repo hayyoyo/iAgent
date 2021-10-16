@@ -1,0 +1,369 @@
+{
+	"metrics": {
+		"file": "metrics.txt",
+		"path": "/data/app/transfer_switch/data/",
+		"maxsize": "5242880"
+	},
+	"adc": {
+		"name": "adc",
+		"enable": "0",
+		"sampletime_s": "60",
+		"channels": [
+			{
+				"name": "in",
+				"sub": [],
+				"pub": []
+			},
+			{
+				"name": "out",
+				"ip": "172.17.0.1",
+				"port": "1883",
+				"type": "mqtt",
+				"sub": [
+					{
+						"name": "database/get/response/adcreader/register",
+						"extdata": [
+							{
+								"name": "function",
+								"value": "register",
+								"length": "",
+								"offset": "",
+								"method": "property",
+								"type": "string"
+							}
+						]
+					},
+					{
+						"name": "database/get/response/adcreader/realtime",
+						"extdata": [
+							{
+								"name": "function",
+								"value": "realtime",
+								"length": "",
+								"offset": "",
+								"method": "property",
+								"type": "string"
+							}
+						]
+					}
+				],
+				"pub": [
+					{
+						"name": "adcreader/get/request/database/register",
+						"extdata": [
+							{
+								"name": "function",
+								"value": "register",
+								"length": "",
+								"offset": "",
+								"method": "property",
+								"type": "string"
+							}
+						]
+					},
+					{
+						"name": "adcreader/get/request/database/realtime",
+						"extdata": [
+							{
+								"name": "function",
+								"value": "realtime",
+								"length": "",
+								"offset": "",
+								"method": "property",
+								"type": "string"
+							}
+						]
+					}
+				]
+			}
+		],
+		"devices": [
+			{
+				"name": "ADC",
+				"address": "1",
+				"timeout_ms": "60000",
+				"model": "ADC",
+				"addr": "1"
+			}
+		]
+	},
+	"3762": {
+		"name": "3762",
+		"enable": "1",
+		"cco": "000005829936",
+		"timeout_ms": "20000",
+		"channels": [
+			{
+				"name": "in",
+				"ip": "172.17.0.1",
+				"port": "1883",
+				"type": "mqtt",
+				"sub": [
+					{
+						"name": "checkchangephase/set/request/3762/monnode",
+						"extdata": [
+							{
+								"name": "function",
+								"value": "monnode",
+								"length": "",
+								"offset": "",
+								"method": "",
+								"type": "string"
+							},
+							{
+								"name": "app",
+								"value": "checkchangephase",
+								"length": "",
+								"offset": "",
+								"method": "",
+								"type": "string"
+							}
+						]
+					},
+					{
+						"name": "changephase/set/request/3762/monnode",
+						"extdata": [
+							{
+								"name": "function",
+								"value": "monnode",
+								"length": "",
+								"offset": "",
+								"method": "",
+								"type": "string"
+							},
+							{
+								"name": "app",
+								"value": "changephase",
+								"length": "",
+								"offset": "",
+								"method": "",
+								"type": "string"
+							}
+						]
+					}
+				],
+				"pub": [
+					{
+						"name": "3762/set/response/checkchangephase/monnode",
+						"extdata": [
+							{
+								"name": "function",
+								"value": "monnode",
+								"length": "",
+								"offset": "",
+								"method": "",
+								"type": "string"
+							},
+							{
+								"name": "app",
+								"value": "checkchangephase",
+								"length": "",
+								"offset": "",
+								"method": "",
+								"type": "string"
+							}
+						]
+					},
+					{
+						"name": "3762/set/response/changephase/monnode",
+						"extdata": [
+							{
+								"name": "function",
+								"value": "monnode",
+								"length": "",
+								"offset": "",
+								"method": "",
+								"type": "string"
+							},
+							{
+								"name": "app",
+								"value": "changephase",
+								"length": "",
+								"offset": "",
+								"method": "",
+								"type": "string"
+							}
+						]
+					}
+				]
+			},
+			{
+				"name": "out",
+				"port": "/dev/ttyS7",
+				"baudrate": "9600",
+				"parity": "2",
+				"databits": "8",
+				"stopbits": "1",
+				"type": "serialport"
+			}
+		],
+		"devices": [
+			{
+				"name": "5",
+				"address": "5",
+				"phase": "0",
+				"enterphase": "0",
+				"status": "1",
+				"current": "0"
+			},
+			{
+				"name": "20",
+				"address": "20",
+				"phase": "0",
+				"enterphase": "0",
+				"status": "1",
+				"current": "0"
+			}
+		]
+	},
+	"checkchangephase": {
+		"name": "checkchangephase",
+		"enable": "1",
+		"unb_i": "150",
+		"unb_lim": "80",
+		"a_phsa": "5440",
+		"a_phsb": "4000",
+		"a_phsc": "2560",
+		"a_phsn": "0",
+		"a_phs_ratio": "70000",
+		"sampletime_s": "20",
+		"duration_m": "1",
+		"timeout_ms": "25000",
+		"aheadTime_m": "1",
+		"threshold": "15",
+		"stopTime0_h": "23",
+		"stopTime0_m": "30",
+		"stopTime1_h": "01",
+		"stopTime1_m": "00",
+		"changecount":"100",
+		"channels": [
+			{
+				"name": "in",
+				"sub": [],
+				"pub": []
+			},
+			{
+				"name": "out",
+				"ip": "172.17.0.1",
+				"port": "1883",
+				"type": "plccomm",
+				"props": [
+					{
+						"name": "address",
+						"value": "",
+						"length": "2",
+						"offset": "5",
+						"method": "revert",
+						"type": "byte"
+					}
+				],
+				"sub": [
+					{
+						"name": "3762/set/response/checkchangephase/monnode",
+						"extdata": []
+					}
+				],
+				"pub": [
+					{
+						"name": "checkchangephase/set/request/3762/monnode",
+						"extdata": [
+							{
+								"name": "function",
+								"value": "monnode",
+								"length": "",
+								"offset": "",
+								"method": "",
+								"type": "string"
+							}
+						]
+					}
+				]
+			}
+		],
+		"devices": [
+			{
+				"name": "5",
+				"address": "5",
+				"phase": "0",
+				"enterphase": "0",
+				"status": "1",
+				"current": "0"
+			},
+			{
+				"name": "20",
+				"address": "20",
+				"phase": "0",
+				"enterphase": "0",
+				"status": "1",
+				"current": "0"
+			}
+		]
+	},
+	"changephase": {
+		"name": "changephase",
+		"enable": "1",
+		"timeout_ms": "30000",
+		"channels": [
+			{
+				"name": "in",
+				"sub": [],
+				"pub": []
+			},
+			{
+				"name": "out",
+				"ip": "172.17.0.1",
+				"port": "1883",
+				"type": "plccomm",
+				"props": [
+					{
+						"name": "address",
+						"value": "",
+						"length": "2",
+						"offset": "5",
+						"method": "revert",
+						"type": "byte"
+					}
+				],
+				"sub": [
+					{
+						"name": "3762/set/response/changephase/monnode",
+						"extdata": []
+					}
+				],
+				"pub": [
+					{
+						"name": "changephase/set/request/3762/monnode",
+						"extdata": [
+							{
+								"name": "function",
+								"value": "monnode",
+								"length": "",
+								"offset": "",
+								"method": "",
+								"type": "string"
+							}
+						]
+					}
+				]
+			}
+		],
+		"devices": [
+			{
+				"name": "5",
+				"address": "5",
+				"phase": "0",
+				"enterphase": "0",
+				"status": "1",
+				"current": "0"
+			},
+			{
+				"name": "20",
+				"address": "20",
+				"phase": "0",
+				"enterphase": "0",
+				"status": "1",
+				"current": "0"
+			}
+		]
+	}
+}
